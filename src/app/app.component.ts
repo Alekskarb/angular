@@ -10,7 +10,8 @@ export class AppComponent {
   number = 'strings';
   arr = [1,2,3]
   obj = {a: 1, b: {c:2}}
-  img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg'
+  img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg';
+  inputValue = ''
 
   constructor() {
     // super(props);
@@ -19,5 +20,14 @@ export class AppComponent {
     }, 2000)
   }
 
+  inputHandler(e: Event) {
+    console.log('input event :', e)
+    this.inputValue = (<HTMLInputElement>e.target).value
+  }
 
+  onBlur(str: string) {
+    this.inputValue = str;
+  }
+
+  protected readonly event = event;
 }
