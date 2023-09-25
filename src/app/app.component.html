@@ -1,4 +1,6 @@
 <h1> Angular Works !</h1>
+<input type="text" [(ngModel)]="title">
+<p><strong>{{title}}</strong></p>
 <input type="text" (keyup.enter)="inputHandler($event)" (blur)="onBlur(myInput.value)" #myInput>
 <p><strong>{{inputValue}}</strong></p>
 <app-post></app-post>

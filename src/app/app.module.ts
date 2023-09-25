@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostTemplateComponent } from './post-template/post-template.component';
 import {NgOptimizedImage} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,10 +13,11 @@ import {NgOptimizedImage} from "@angular/common";
     PostComponent,
     PostTemplateComponent
   ],
-    imports: [
-        BrowserModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    BrowserModule,
+    NgOptimizedImage,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
