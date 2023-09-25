@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-basics';
+  title = 'strings';
+  number = 'strings';
+  arr = [1,2,3]
+  obj = {a: 1, b: {c:2}}
+  img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg'
+
+  constructor() {
+    // super(props);
+    setTimeout(()=> {
+      this.img = 'https://topcraft.by/wp-content/uploads/2019/09/Top_Craft_021-667x667.jpg'
+    }, 2000)
+  }
+
+
 }
