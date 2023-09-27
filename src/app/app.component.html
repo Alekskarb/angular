@@ -1,36 +1,13 @@
-<h1> Angular Works !</h1>
-<input type="text" [(ngModel)]="title">
-<p><strong>{{title}}</strong></p>
-<input type="text" (keyup.enter)="inputHandler($event)" (blur)="onBlur(myInput.value)" #myInput>
-<p><strong>{{inputValue}}</strong></p>
-<app-post></app-post>
-<app-post></app-post>
-{{title}} - {{number}} - {{arr}} - {{obj}}
-<!--<img src="{{img}}" alt="">-->
-<img [src]="img" alt="">
-<hr>
-<app-post-template></app-post-template>
-<button (click)="toggleBG = !toggleBG"> toggle</button>
-<button (click)="toggleBG = '!toggleBG'"> Default</button>
-<div [ngClass]="{red: toggleBG, cyan: !toggleBG}">change1</div>
-<div [class.cyan]="toggleBG" [class.red]="!toggleBG">change2</div>
+<div class="container">
+  <h1>Angular Components</h1>
 
-<div *ngIf="toggleBG; else blockElse" class="red">toggle IF</div>
+  <app-post-form></app-post-form>
 
-<div [ngSwitch]="toggleBG">
-  <p *ngSwitchCase="true" class="red"> true </p>
-  <p *ngSwitchCase="false" class="cyan"> false </p>
-  <p *ngSwitchDefault class="black"> default </p>
+  <hr />
+
+  <app-post *ngFor="let post of posts" [passedPost]="post">
+  </app-post>
+
 </div>
 
-<ul>
-  <li *ngFor="let el of array"> {{el}} </li>
-</ul>
-<ng-template #blockElse>
-  <!--  <div *ngIf="!toggleBG" class="cyan">toggle ELSE</div>-->
-  <div class="cyan">toggle ELSE</div>
-</ng-template>
-
-<div [ngStyle]="{width: '222px', height: '222px', border: '2px solid green', borderRadius: '11px',
-background: toggleBG ? 'red' : 'green'}"></div>
 

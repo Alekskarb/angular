@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+export interface Post {
+  title: string,
+  txt: string,
+  id?: number,
+}
 
 @Component({
   selector: 'app-root',
@@ -6,30 +12,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'strings';
-  number = 'strings';
-  arr = [1,2,3]
-  obj = {a: 1, b: {c:2}}
-  img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg';
-  inputValue = '';
-  toggleBG: any = false;
-  array = [1,2,3,4,5,6]
-
-  constructor() {
-    // super(props);
-    setTimeout(()=> {
-      this.img = 'https://topcraft.by/wp-content/uploads/2019/09/Top_Craft_021-667x667.jpg'
-    }, 2000)
-  }
-
-  inputHandler(e: Event) {
-    console.log('input event :', e)
-    this.inputValue = (<HTMLInputElement>e.target).value
-  }
-
-  onBlur(str: string) {
-    this.inputValue = str;
-  }
-
-  protected readonly event = event;
+  posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
 }
