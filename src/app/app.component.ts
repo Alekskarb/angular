@@ -13,6 +13,7 @@ export class AppComponent {
   img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg';
   inputValue = '';
   toggleBG: any = false;
+  array = [1,2,3,4,5,6]
 
   constructor() {
     // super(props);
