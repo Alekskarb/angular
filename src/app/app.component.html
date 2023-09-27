@@ -10,4 +10,7 @@
 <img [src]="img" alt="">
 <hr>
 <app-post-template></app-post-template>
+<button (click)="toggleBG = !toggleBG"> toggle </button>
+<div [ngStyle]="{width: '222px', height: '222px', border: '2px solid green', borderRadius: '11px',
+background: toggleBG ? 'red' : 'cyan'}"> </div>
 

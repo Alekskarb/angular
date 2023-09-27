@@ -11,7 +11,8 @@ export class AppComponent {
   arr = [1,2,3]
   obj = {a: 1, b: {c:2}}
   img = 'https://topcraft.by/wp-content/uploads/2019/04/Avtomojka-Top-Craft.jpg';
-  inputValue = ''
+  inputValue = '';
+  toggleBG = false;
 
   constructor() {
     // super(props);
