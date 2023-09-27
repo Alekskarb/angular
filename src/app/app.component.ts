@@ -13,4 +13,9 @@ export interface Post {
 })
 export class AppComponent {
   posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
+
+  emittedPost(emittedPost: Post) {
+    console.log('emitted post: ', emittedPost)
+    this.posts.unshift(emittedPost);
+  }
 }
