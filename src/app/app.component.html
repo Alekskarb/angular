@@ -11,6 +11,9 @@
 <hr>
 <app-post-template></app-post-template>
 <button (click)="toggleBG = !toggleBG"> toggle </button>
+<div [ngClass]="{red: toggleBG, cyan: !toggleBG}">change1</div>
+<div [class.cyan]="toggleBG" [class.red]="!toggleBG">change2</div>
+
 <div [ngStyle]="{width: '222px', height: '222px', border: '2px solid green', borderRadius: '11px',
-background: toggleBG ? 'red' : 'cyan'}"> </div>
+background: toggleBG ? 'red' : 'green'}"> </div>
 
