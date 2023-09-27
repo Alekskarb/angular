@@ -6,6 +6,10 @@
   <hr />
 
   <app-post *ngFor="let post of posts" [passedPost]="post">
+
+    <small *ngIf="post.txt.length < 9; else long"> SHORT </small>
+    <ng-template #long><small>LONG</small></ng-template>
+
   </app-post>
 
 </div>
