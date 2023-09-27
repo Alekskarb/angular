@@ -14,6 +14,12 @@
 <div [ngClass]="{red: toggleBG, cyan: !toggleBG}">change1</div>
 <div [class.cyan]="toggleBG" [class.red]="!toggleBG">change2</div>
 
+<div *ngIf="toggleBG; else blockElse" class="red">toggle IF</div>
+<ng-template #blockElse>
+<!--  <div *ngIf="!toggleBG" class="cyan">toggle ELSE</div>-->
+  <div class="cyan">toggle ELSE</div>
+</ng-template>
+
 <div [ngStyle]="{width: '222px', height: '222px', border: '2px solid green', borderRadius: '11px',
 background: toggleBG ? 'red' : 'green'}"> </div>
 
