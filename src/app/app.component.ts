@@ -12,7 +12,8 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
+  // posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
+  posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, ]
 
   emittedPost(emittedPost: Post) {
     console.log('emitted post: ', emittedPost)

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Post} from "../app.component";
 
 @Component({
@@ -6,13 +6,20 @@ import {Post} from "../app.component";
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnChanges {
 
   @Input() passedPost: Post | undefined
+  @ContentChild('content', {static: true}) contentRef!: ElementRef
 
-  constructor() { }
+  constructor() {
+    console.log('constructor')
+  }
 
   ngOnInit() {
+    console.log('ngOnInit: ', this.contentRef);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
   }
 
 }
