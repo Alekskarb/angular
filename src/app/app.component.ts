@@ -19,4 +19,9 @@ export class AppComponent {
     console.log('emitted post: ', emittedPost)
     this.posts.unshift(emittedPost);
   }
+
+    removePost(id: number) {
+      console.log('Remove id: ', id)
+        this.posts.filter(el => el.id !== id)
+    }
 }

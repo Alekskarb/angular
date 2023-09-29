@@ -5,7 +5,7 @@
 
   <hr />
 
-  <app-post *ngFor="let post of posts" [passedPost]="post">
+  <app-post *ngFor="let post of posts" [passedPost]="post" (onRemove)="removePost($event)">
 
     <div #content>
       <small *ngIf="post.txt.length < 9; else long"> SHORT </small>
