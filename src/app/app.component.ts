@@ -12,8 +12,8 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
-  posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, ]
+  posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
+  // posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, ]
 
   emittedPost(emittedPost: Post) {
     console.log('emitted post: ', emittedPost)
@@ -22,6 +22,6 @@ export class AppComponent {
 
     removePost(id: number) {
       console.log('Remove id: ', id)
-        this.posts.filter(el => el.id !== id)
+      this.posts = this.posts.filter(el => el.id !== id);
     }
 }
