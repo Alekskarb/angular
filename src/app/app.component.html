@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Angular Components</h1>
   <h2>Header</h2>
-  <p appStyle>Angular Directives</p>
+  <p appStyle="red" fontWeight="bold" [dStyleObj]="{border: '1px solid blue', borderRadius: '5px'}">Angular Directives</p>
+  <p appStyle="blue" fontWeight="" [dStyleObj]="{border: '1px solid red', borderRadius: '11px'}">Angular Directives2</p>
 
   <app-post-form (onAdd)="emittedPost($event)"></app-post-form>
 
