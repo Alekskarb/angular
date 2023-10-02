@@ -14,4 +14,5 @@ export interface Post {
 export class AppComponent {
   e: number = Math.E
   str = 'heLLo World !'
+  date = new Date()
 }
