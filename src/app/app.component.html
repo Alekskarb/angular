@@ -1,17 +1,10 @@
 <div class="container">
+  <h1>Angular Services</h1>
 
-  <p>Waiting for ... {{promise | async}}</p>
-  <p>Waiting new Date... {{myDate | async | date: 'MM-dd-YYYY HH:mm:ss'}}</p>
-
-  <input type="text" [(ngModel)]="search">
-  <button class="btn" (click)="searchField = 'title'">title</button>
-  <button class="btn" (click)="searchField = 'text'">text</button>
-  <hr>
-  <button class="btn" (click)="addPost()">add Post</button>
-
-  <div class="card" *ngFor="let post of posts | filter:search:searchField">
-  <h2>{{post.title}}</h2>
-  <p>{{post.text}}</p>
+  <div class="card">
+    <h2>Counter: {{appCounterService.counter}}</h2>
+    <button class="btn" (click)="appCounterService.increase()"> + </button>
+    <button class="btn" (click)="appCounterService.decrease()"> - </button>
   </div>
 </div>
 
