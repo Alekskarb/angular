@@ -13,6 +13,17 @@
   <p>{{10 | multi: 2}}</p>
   <p>{{10 | multi: 10}}</p>
   <p>{{'Hello World     ' | exMarks}}</p>
+
+  <input type="text" [(ngModel)]="search">
+  <button class="btn" (click)="searchField = 'title'">title</button>
+  <button class="btn" (click)="searchField = 'text'">text</button>
+  <hr>
+  <button class="btn" (click)="addPost()">add Post</button>
+
+  <div class="card" *ngFor="let post of posts | filter:search:searchField">
+  <h2>{{post.title}}</h2>
+  <p>{{post.text}}</p>
+  </div>
 </div>
 
 

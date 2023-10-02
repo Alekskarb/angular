@@ -5,12 +5,14 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {MultiPipe} from "./pipes/multi.pipe";
 import { ExMarksPipe } from './pipes/ex-marks.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MultiPipe,
-    ExMarksPipe
+    ExMarksPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
