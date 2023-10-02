@@ -7,7 +7,8 @@
   <p> {{ str | slice: 1:10}}</p>  <p> {{ str | slice: 1:-1}}</p>
 
   <p>{{date | date: 'MM-dd-yyyy HH:mm:ss'}}</p>
-
+<p>{{float | currency}}</p> <p>{{float | percent}}</p> <p>{{float | percent: '2.2-2'}}</p>
+  <pre>{{obj | json}}</pre>
 </div>
 
 
