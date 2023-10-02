@@ -12,6 +12,7 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  isVisible = true;
   // posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, {title: 'title22', txt: 'txt22', id: 22},]
   posts: Post[] = [{title: 'title11', txt: 'txt11', id: 11}, ]
 

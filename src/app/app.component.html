@@ -2,7 +2,28 @@
   <h1>Angular Components</h1>
   <h2>Header</h2>
   <p appStyle="red" fontWeight="bold" [dStyleObj]="{border: '1px solid blue', borderRadius: '5px'}">Angular Directives</p>
-  <p appStyle="blue" fontWeight="" [dStyleObj]="{border: '1px solid red', borderRadius: '11px'}">Angular Directives2</p>
+<!--  <p appStyle="blue" fontWeight="" [dStyleObj]="{border: '1px solid red', borderRadius: '11px'}">Angular Directives2</p>-->
+
+  <button class="btn" (click)="isVisible = !isVisible">toggle</button>
+<!--! 1 case-->
+
+<!--  <div class="wrapp" *ngIf="isVisible">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, sapiente, tempore! Aperiam beatae ducimus esse expedita inventore minima mollitia odit?</p>-->
+<!--  </div>-->
+
+  <!--! 2 case-->
+
+<!--  <ng-template [ngIf]="isVisible">-->
+<!--  <div class="wrapp" >-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, sapiente, tempore! Aperiam beatae ducimus esse expedita inventore minima mollitia odit?</p>-->
+<!--  </div>-->
+<!--  </ng-template>-->
+
+  <!--! 3 case-->
+
+  <div class="wrapp" *appIfNot="isVisible" >
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, sapiente, tempore! Aperiam beatae ducimus esse expedita inventore minima mollitia odit?</p>
+  </div>
 
   <app-post-form (onAdd)="emittedPost($event)"></app-post-form>
 
