@@ -2,3 +2,11 @@ div.wrapp {
   border: 2px dashed red;
   padding: 12px;
 }
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px red solid;
+  }
+  &.ng-valid.ng-touched {
+    border: 1px green solid;
+  }
+}
