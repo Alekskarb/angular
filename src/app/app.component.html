@@ -9,6 +9,7 @@
       *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
         <small *ngIf="form.get('email')?.errors!['required']">Empty Field !?</small>
         <small *ngIf="form.get('email')?.errors!['email']">Enter valid data!</small>
+        <small *ngIf="form.get('email')?.errors!['incorrectEmail']">Restricted email!</small>
       </div>
     </div>
 
