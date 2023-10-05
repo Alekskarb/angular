@@ -1,12 +1,14 @@
-div.wrapp {
-  border: 2px dashed red;
-  padding: 12px;
+p {
+  font-size: 1.5rem;
 }
+
+
 input {
   &.ng-invalid.ng-touched {
-    border: 1px red solid;
+    border: 1px solid red;
   }
+
   &.ng-valid.ng-touched {
-    border: 1px green solid;
+    border: 1px solid green;
   }
 }
