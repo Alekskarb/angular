@@ -13,9 +13,9 @@ export class OwnValidators {
     return new Promise(resolve => {
       setTimeout(() => {
         if (control.value === 'aa@aa.aa') {
-          return {uniqEmail: true}
+          resolve({uniqEmail: true})
         } else {
-          return null;
+          resolve(null);
         }
       }, 1000)
     })
