@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {delay} from "rxjs";
 
 export interface ToDos {
-  id?: number;
+  id: number;
   title: string;
   completed: boolean
 }
@@ -32,12 +32,13 @@ export class AppComponent implements OnInit {
     ;
     const newTodo: ToDos = {
       title: this.todoTitle,
-      completed: false
+      completed: false,
+      id: 12434
     }
     this.http.post<ToDos>('https://jsonplaceholder.typicode.com/todos', newTodo).subscribe(
       (todo) => {
         this.todos.push(todo)
-this.todoTitle=''
+        this.todoTitle = ''
       })
   }
 
@@ -49,6 +50,15 @@ this.todoTitle=''
         this.todos = response;
         this.loading = false;
       })
+  }
+
+  removeTodo(id: number) {
+    this.http.delete<ToDos>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe(() => {
+        this.todos = this.todos.filter(
+          (el) => el.id !== id)
+      })
+
   }
 }
 
