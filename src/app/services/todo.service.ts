@@ -17,8 +17,13 @@ export class TodoService {
      return  this.http.get<ToDos[]>('https://jsonplaceholder.typicode.com/todos?_limit=2').pipe(delay(500))
   }
 
-  removeTodo(id: number) {
-    return  this.http.delete<ToDos>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  removeTodo(id: number): Observable<void> {
+    return  this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  }
+  completeTodo(id: number): Observable<ToDos> {
+    return this.http.put<ToDos>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      completed: true
+    })
   }
 }
 
