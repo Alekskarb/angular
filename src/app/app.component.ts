@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {HttpClient} from "@angular/common/http";
-import {delay} from "rxjs";
+import {delay, finalize} from "rxjs";
 import {TodoService} from "./services/todo.service";
 
 export interface ToDos {
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   todos: ToDos[] = [];
   todoTitle = ''
   loading = false;
+  error = '';
 
   constructor(private serverService: TodoService) {
   }
@@ -48,7 +49,9 @@ export class AppComponent implements OnInit {
       .subscribe(response => {
         this.todos = response;
         this.loading = false;
-      })
+      },
+          (error) => {this.error = error.message},
+          () => {})
   }
 
   removeTodo(id: number) {
@@ -61,7 +64,6 @@ export class AppComponent implements OnInit {
 
   completeTodo(id: number) {
     this.serverService.completeTodo(id).subscribe(res =>{
-      console.log(res)
       this.todos.find((el: ToDos)=> el.id === res.id)!.completed = true
     })
   }

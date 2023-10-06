@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ToDos} from "../app.component";
-import {delay, Observable} from "rxjs";
+import {catchError, delay, Observable, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,12 @@ export class TodoService {
     return this.http.post<ToDos>('https://jsonplaceholder.typicode.com/todos', newTodo)}
 
   fetchTodo(): Observable<ToDos[]> {
-     return  this.http.get<ToDos[]>('https://jsonplaceholder.typicode.com/todos?_limit=2').pipe(delay(500))
+     return  this.http.get<ToDos[]>('https://jsonplaceholder.typicode.com/todos1?_limit=2').pipe(
+       catchError(error => {
+         console.log(error.message);
+         return throwError(error);
+       }),
+       delay(500))
   }
 
   removeTodo(id: number): Observable<void> {
