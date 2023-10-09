@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   getTodos() {
     this.loading = true;
     this.serverService.fetchTodo()
-      .subscribe(response => {
+      .subscribe((response) => {
         this.todos = response;
         this.loading = false;
       },
@@ -63,8 +63,10 @@ export class AppComponent implements OnInit {
   }
 
   completeTodo(id: number) {
-    this.serverService.completeTodo(id).subscribe(res =>{
-      this.todos.find((el: ToDos)=> el.id === res.id)!.completed = true
+    this.serverService.completeTodo(id).subscribe(todo => {
+      // todo = JSON.parse(todo)
+      this.todos.find((el: ToDos)=> el.id === todo.id)!.completed = true;
+      console.log()
     })
   }
 }
