@@ -9,6 +9,7 @@ import {PostsComponent} from './posts/posts.component'
 import {PostComponent} from './post/post.component'
 import {AboutExtraComponent} from './about-extra/about-extra.component'
 import {AppRoutingModule} from "./app-routing.module";
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {AppRoutingModule} from "./app-routing.module";
     PostsComponent,
     PostComponent,
     AboutExtraComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
